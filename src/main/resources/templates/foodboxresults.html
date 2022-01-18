@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang=en xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Foodbox</title>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+	$(function() {
+		$("#header").load("header1.html");
+		$("#footer").load("footer.html");
+	});
+</script>
+<style>
+#errormsg {
+    color: red;
+    margin-left: 20px;
+}
+#successmsg {
+    color: red;
+    margin-left: 20px;
+}
+</style>
+</head>
+<body>
+	<div id="header"></div>
+	<div id="errormsg" th:if="${errorMsg != null}">
+		<h3 style="color: red;" th:text="${errorMsg}"></h3>
+	</div>
+	<div id="successmsg" th:if="${successMsg != null}">
+		<h3 style="color: red;" th:text="${successMsg}"></h3>
+	</div>
+	<div id="footer"></div>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="ISO-8859-1">
+      <title>Foodbox Login</title>
+      <link rel="stylesheet" href="styles.css">
+      <script
+         src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      <script>
+         $(function() {
+         	$("#header").load("header1.html");
+         	$("#footer").load("footer.html");
+         });
+      </script>
+      <style>
+         .formcontainer {
+         text-align: left;
+         margin: 24px 50px 12px;
+         }
+         .container {
+         padding: 16px 0;
+         text-align: left;
+         }
+         button:hover {
+         opacity: 0.8;
+         }
+         h1 {
+         text-align: center;
+         font-size: 18;
+         }
+         button {
+         background-color: #04AA6D;
+         color: white;
+         padding: 14px 0;
+         margin: 10px 0;
+         border: none;
+         cursor: grabbing;
+         width: 30%;
+         }
+         p {
+	     font-size: 30px;
+	     margin-left: 50px;
+	     color: orangered;
+         }
+         input[type=text], input[type=password] {
+         width: 100%;
+         padding: 16px 8px;
+         margin: 8px 0;
+         display: inline-block;
+         border: 1px solid #ccc;
+         box-sizing: border-box;
+         }
+         /* Change styles for span on extra small screens */
+         @media screen and (max-width: 300px) {
+         span.psw {
+         display: block;
+         float: none;
+         }
+         }
+      </style>
+   </head>
+   <div id="header"></div>
+   <br />
+   <p>Welcome to Foodbox Login</p>
+   <body>
+      <form>
+         <div class="formcontainer">
+            <hr />
+            <button name="userloginbutton" type="button" id="userLoginButton">Login</button>
+            <br />
+            <button name="adminloginbutton" type="button" id="adminLoginButton">Admin Login</button>
+            <hr />
+         </div>
+      </form>
+   </body>
+   <div id="footer"></div>
+   <script type="text/javascript">
+      document.getElementById("userLoginButton").onclick = function() {
+      	location.href = "/userlogin.html";
+      };
+      document.getElementById("adminLoginButton").onclick = function() {
+      	location.href = "/adminlogin.html";
+      };
+   </script>
+</html>

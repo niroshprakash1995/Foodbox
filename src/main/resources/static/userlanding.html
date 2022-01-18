@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="ISO-8859-1">
+      <title>Foodbox</title>
+      <link rel="stylesheet" href="css/index.css">
+      <script
+         src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      <script>
+         $(function() {
+         	$("#header").load("header1.html");
+         	$("#footer").load("footer.html");
+         });
+      </script>
+      <style>
+         .formcontainer {
+         text-align: left;
+         margin: 24px 50px 12px;
+         }
+         .container {
+         padding: 16px 0;
+         text-align: left;
+         }
+         button:hover {
+         opacity: 0.8;
+         }
+         h1 {
+         text-align: center;
+         font-size: 18;
+         }
+         button {
+         background-color: #04AA6D;
+         color: white;
+         padding: 14px 0;
+         margin: 10px 0;
+         border: none;
+         cursor: grabbing;
+         width: 30%;
+         }
+         .btn {
+         margin-left: 20px;
+         }
+         input[type=text], input[type=password] {
+         width: 50%;
+         padding: 16px 8px;
+         margin: 8px 0;
+         display: inline-block;
+         border: 1px solid #ccc;
+         box-sizing: border-box;
+         }
+         /* Change styles for span on extra small screens */
+         @media screen and (max-width: 300px) {
+         span.psw {
+         display: block;
+         float: none;
+         }
+         }
+      </style>
+   </head>
+   <div id="header"></div>
+   <br />
+   <body>
+      <br/>
+      <a href="products.html" class="btn" id="products">View all products</a>
+      <a href="cuisines.html" class="btn" id="products">Shop by cuisine</a>
+      <a href="cart.html" class="btn" id="products" style="background-color:#ff0000">View cart</a>
+      <br/><br/>
+      <form style="margin-left: 20px;">
+         <h4 >Search products</h4>
+         <p style="font-family: Arial, Helvetica, sans-serif;"> Try Dosa, Idli, Biryani...... 
+         <p>
+            <input type="text" id="searchtext"  name="searchtext" placeholder="Search.." required/>  <br/> <br/>
+            <input class="btn" id="searchbutton" type="button" value="Search" style="background-color:#228B22;margin-left: 0px;"/>  
+      </form>
+   </body>
+   <script>
+      document.getElementById("searchbutton").onclick = function() {
+        	var searchtext = document.getElementById("searchtext").value.toLowerCase().trim();
+        	if(searchtext == ""){
+        		alert("Please enter name to search.")
+        	}
+        	else{
+        	localStorage.setItem("searchItem", searchtext);
+        	location.href = "http://localhost:8081/searchproduct.html";
+        	}	
+       };
+   </script>
+   <div id="footer"></div>
+</html>
